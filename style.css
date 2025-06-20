@@ -1,0 +1,119 @@
+/* ========== GLOBAL STYLES ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Unbounded', sans-serif;
+  background-color: #0e0e0e;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ========== HEADER ========== */
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  z-index: 999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 24px;
+}
+
+.main-nav a {
+  font-weight: 400;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+  opacity: 0.8;
+}
+
+.main-nav a:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* ========== HERO SECTION ========== */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  background: linear-gradient(120deg, #ff4d4d, #8b00ff);
+  color: #ffffff;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ========== SECTION HEADINGS ========== */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ffffff20;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+/* ========== FOOTER ========== */
+.site-footer {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #111111;
+  font-size: 0.85rem;
+  color: #aaaaaa;
+}
