@@ -986,7 +986,7 @@ body#index .site-logo {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background: url('assets/images/arkaplan.jpg') center center / cover no-repeat;
+  background: url('assets/images/background.jpeg') center center / cover no-repeat;
   /* Dilerseniz opaklık veya renk filtresi ekleyebilirsiniz */
   /* opacity: 0.9; */
 }
@@ -995,5 +995,4 @@ body#index .site-logo {
 body {
   position: relative;
   z-index: 1;
-  background: transparent !important;
 }
