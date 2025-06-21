@@ -85,14 +85,19 @@
     })
     .then(response => response.json())
     .then(result => {
-      document.getElementById('success-popup').classList.remove('hidden');
-      setTimeout(() => {
-        document.getElementById('success-popup').classList.add('hidden');
-        document.getElementById('ticket-form').reset();
-      }, 3000);
+      if (result.result === "success") {
+        document.getElementById('success-popup').classList.remove('hidden');
+        setTimeout(() => {
+          document.getElementById('success-popup').classList.add('hidden');
+          document.getElementById('ticket-form').reset();
+        }, 3000);
+      } else {
+        alert("Gönderim başarısız oldu.");
+      }
     })
     .catch(error => {
-      alert('Gönderim sırasında hata oluştu. Lütfen tekrar deneyin.');
+      alert("Bir hata oluştu. Lütfen tekrar deneyin.");
+      console.error("Form gönderim hatası:", error);
     });
   });
 </script>
