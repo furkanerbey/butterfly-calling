@@ -52,18 +52,17 @@
       <button type="submit">Formu Gönder</button>
     </form>
 
-    <!-- BAŞARI POPUP -->
+    <!-- ✅ BAŞARI POPUP -->
     <div id="success-popup" class="success-popup hidden">
       <div class="popup-content">
         <h3>✅ Başvuru Alındı</h3>
         <p>En kısa sürede seninle iletişime geçeceğiz.</p>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ✅ FORM JS -->
+<!-- ✅ JS: Form Gönderme -->
 <script>
   document.getElementById('ticket-form').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -83,25 +82,22 @@
         'Content-Type': 'application/json'
       }
     })
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) throw new Error("Form gönderimi başarısız.");
+      return response.json();
+    })
     .then(result => {
-      if (result.result === "success") {
-        document.getElementById('success-popup').classList.remove('hidden');
-        setTimeout(() => {
-          document.getElementById('success-popup').classList.add('hidden');
-          document.getElementById('ticket-form').reset();
-        }, 3000);
-      } else {
-        alert("Gönderim başarısız oldu.");
-      }
+      document.getElementById('success-popup').classList.remove('hidden');
+      setTimeout(() => {
+        document.getElementById('success-popup').classList.add('hidden');
+        document.getElementById('ticket-form').reset();
+      }, 3000);
     })
     .catch(error => {
-      alert("Bir hata oluştu. Lütfen tekrar deneyin.");
-      console.error("Form gönderim hatası:", error);
+      alert("Form gönderim hatası: " + error.message);
     });
   });
 </script>
-<script src="script.js"></script>
 
 </body>
 </html>
