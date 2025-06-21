@@ -1,42 +1,26 @@
-document.getElementById('ticket-form').addEventListener('submit', function(e) {
+const form = document.getElementById('ticket-form'),
+      popup = document.getElementById('success-popup'),
+      URL = 'https://script.google.com/macros/s/AKfycbxpSj37qEktp2--5ediJ7fW78T3aJIqO40xY1QqFJcMJ39bqOaAfILtqy0XSNMMnnVK/exec';
+
+form.addEventListener('submit', e => {
   e.preventDefault();
-
   const data = {
-    fullname: document.getElementById('fullname').value,
-    phone: document.getElementById('phone').value,
-    email: document.getElementById('email').value,
-    participation: document.getElementById('participation').value,
-    message: document.getElementById('message').value
+    fullname: form.fullname.value.trim(),
+    phone: form.phone.value.trim(),
+    email: form.email.value.trim(),
+    participation: form.participation.value,
+    message: form.message.value.trim()
   };
-
-  fetch('https://script.google.com/macros/s/AKfycbxpSj37qEktp2--5ediJ7fW78T3aJIqO40xY1QqFJcMJ39bqOaAfILtqy0XSNMMnnVK/exec', {
+  fetch(URL, {
     method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-Type': 'application/json'
-    }
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
   })
-  .then(response => response.json())
-  .then(result => {
-    if (result.result === "success") {
-      document.getElementById('success-popup').classList.remove('hidden');
-      setTimeout(() => {
-        document.getElementById('success-popup').classList.add('hidden');
-        document.getElementById('ticket-form').reset();
-      }, 3000);
-    } else {
-      alert("Gönderim başarısız oldu.");
-    }
+  .then(res => res.json())
+  .then(r => {
+    popup.classList.remove('hidden');
+    form.reset();
+    setTimeout(() => popup.classList.add('hidden'), 3000);
   })
-  .catch(error => {
-    alert("Bir hata oluştu. Lütfen tekrar deneyin.");
-    console.error("Form gönderim hatası:", error);
-  });
+  .catch(err => alert('Form gönderim hatası: ' + err.message));
 });
-function doOptions(e) {
-  return ContentService.createTextOutput("")
-    .setMimeType(ContentService.MimeType.TEXT)
-    .setHeader("Access-Control-Allow-Origin", "*")
-    .setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-    .setHeader("Access-Control-Allow-Headers", "Content-Type");
-}

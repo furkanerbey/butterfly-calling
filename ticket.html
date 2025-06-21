@@ -1,103 +1,39 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Butterfly Calling – Ticket</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&display=swap" rel="stylesheet">
-</head>
-<body>
+<!DOCTYPE html><html lang="tr"><head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Butterfly Calling – Ticket</title>
+<link rel="stylesheet" href="style.css" />
+</head><body>
 
 <a href="index.html" class="back-button">← Geri</a>
-
 <section class="ticket-section">
   <div class="form-container">
     <h2>Bilet Kayıt Formu</h2>
-
     <form id="ticket-form">
-      <!-- AD SOYAD -->
       <label for="fullname">Ad Soyad *</label>
-      <input type="text" id="fullname" name="fullname" placeholder="Adınız ve Soyadınız" required>
-
-      <!-- TELEFON -->
-      <label for="phone">Telefon Numarası *</label>
-      <input type="tel" id="phone" name="phone" placeholder="05XXXXXXXXX" pattern="[0-9]{10,11}" required>
-
-      <!-- E-POSTA -->
-      <label for="email">E-posta Adresi *</label>
-      <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
-
-      <!-- KATILIM TİPİ -->
+      <input type="text" id="fullname" name="fullname" required>
+      <label for="phone">Telefon *</label>
+      <input type="tel" id="phone" name="phone" required>
+      <label for="email">E-posta *</label>
+      <input type="email" id="email" name="email" required>
       <label for="participation">Katılım Tipi *</label>
-      <select id="participation" name="participation" class="custom-select" required>
+      <select id="participation" name="participation" required>
         <option value="" disabled selected>Seçiniz</option>
-        <option value="Daily Pass / 1.500₺">Daily Pass / 1.500₺</option>
-        <option value="After Pass / 2.000₺">After Pass / 2.000₺</option>
-        <option value="Standart Accommodation / 3.000₺">Standart Accommodation / 3.000₺</option>
-        <option value="VIP Accommodation / ?">VIP Accommodation / ?</option>
+        <option value="Daily Pass">Daily Pass / 1.500₺</option>
+        <option value="After Pass">After Pass / 2.000₺</option>
+        <option value="Standart Accommodation">Standart Accommodation / 3.000₺</option>
+        <option value="VIP Accommodation">VIP Accommodation / ?</option>
       </select>
-
-      <!-- MESAJ -->
-      <label for="message">Eklemek İstediğiniz Not veya Soru için</label>
-      <textarea id="message" name="message" placeholder="Type here.."></textarea>
-
-      <!-- KVKK -->
-      <label class="checkbox-inline">
-        <input type="checkbox" name="kvkk" required>
-        KVKK metnini okudum, onaylıyorum.
-      </label>
-
-      <!-- GÖNDER -->
+      <label for="message">Ek Not/Soru</label>
+      <textarea id="message" name="message"></textarea>
+      <label><input type="checkbox" name="kvkk" required> KVKK okudum, onaylıyorum.</label>
       <button type="submit">Formu Gönder</button>
     </form>
-
-    <!-- ✅ BAŞARI POPUP -->
     <div id="success-popup" class="success-popup hidden">
-      <div class="popup-content">
-        <h3>✅ Başvuru Alındı</h3>
-        <p>En kısa sürede seninle iletişime geçeceğiz.</p>
-      </div>
+      <div class="popup-content"><h3>✅ Başvuru Alındı</h3><p>En kısa sürede sizinle iletişime geçeceğiz.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ✅ JS: Form Gönderme -->
-<script>
-  document.getElementById('ticket-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const data = {
-      fullname: document.getElementById('fullname').value,
-      phone: document.getElementById('phone').value,
-      email: document.getElementById('email').value,
-      participation: document.getElementById('participation').value,
-      message: document.getElementById('message').value
-    };
-
-    fetch('https://script.google.com/macros/s/AKfycbxpSj37qEktp2--5ediJ7fW78T3aJIqO40xY1QqFJcMJ39bqOaAfILtqy0XSNMMnnVK/exec', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(response => {
-      if (!response.ok) throw new Error("Form gönderimi başarısız.");
-      return response.json();
-    })
-    .then(result => {
-      document.getElementById('success-popup').classList.remove('hidden');
-      setTimeout(() => {
-        document.getElementById('success-popup').classList.add('hidden');
-        document.getElementById('ticket-form').reset();
-      }, 3000);
-    })
-    .catch(error => {
-      alert("Form gönderim hatası: " + error.message);
-    });
-  });
-</script>
-
-</body>
-</html>
+<script src="script.js"></script>
+</body></html>
