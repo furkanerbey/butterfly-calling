@@ -657,17 +657,78 @@ body#index .site-logo {
 }
 
 @media (max-width: 768px) {
-  .back-button {
-    top: 16px;
-    right: 16px;
-    width: 36px;
-    height: 36px;
+  section {
+    padding: 60px 16px;
+  }
+
+  .venue-card,
+  .about-glass-box,
+  .form-container {
+    margin: 0 12px;
+    padding: 24px;
+  }
+
+  .venue-image {
+    padding-left: 20px;
+    height: 240px;
+    background-position: center;
+  }
+
+  .venue-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .venue-text p {
+    font-size: 0.85rem;
+  }
+
+  .venue-button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+
+  .center-logo img {
+    height: 60px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content h2 {
     font-size: 1.2rem;
   }
-}
-@media (max-width: 768px) {
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .artist-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .about-glass-box {
+    font-size: 0.95rem;
+  }
+
+  .back-button {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+  }
+
   .form-container input,
-  .form-container button {
-    font-size: 1.1rem;
+  .form-container textarea,
+  .form-container select {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .form-container {
+    padding: 20px;
   }
 }
