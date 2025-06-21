@@ -1003,3 +1003,18 @@ body {
   position: relative;
   z-index: 1;
 }
+.hidden {
+  display: none;
+}
+
+.success-popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  z-index: 1001;
+}

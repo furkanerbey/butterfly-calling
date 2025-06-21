@@ -1,39 +1,66 @@
-<!DOCTYPE html><html lang="tr"><head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Butterfly Calling – Ticket</title>
-<link rel="stylesheet" href="style.css" />
-</head><body>
+https://script.google.com/macros/s/AKfycbxDc-W1-ZjK-YfRgL_gTJEPVYncou-YCNDqssOFXvlezCYTrX-S6OHy_PmAYVVsWTid/exec
+```) entegre eden tam `ticket.html` ve `script.js` dosyaları yer alıyor:
 
-<a href="index.html" class="back-button">← Geri</a>
-<section class="ticket-section">
-  <div class="form-container">
-    <h2>Bilet Kayıt Formu</h2>
-    <form id="ticket-form">
-      <label for="fullname">Ad Soyad *</label>
-      <input type="text" id="fullname" name="fullname" required>
-      <label for="phone">Telefon *</label>
-      <input type="tel" id="phone" name="phone" required>
-      <label for="email">E-posta *</label>
-      <input type="email" id="email" name="email" required>
-      <label for="participation">Katılım Tipi *</label>
-      <select id="participation" name="participation" required>
-        <option value="" disabled selected>Seçiniz</option>
-        <option value="Daily Pass">Daily Pass / 1.500₺</option>
-        <option value="After Pass">After Pass / 2.000₺</option>
-        <option value="Standart Accommodation">Standart Accommodation / 3.000₺</option>
-        <option value="VIP Accommodation">VIP Accommodation / ?</option>
-      </select>
-      <label for="message">Ek Not/Soru</label>
-      <textarea id="message" name="message"></textarea>
-      <label><input type="checkbox" name="kvkk" required> KVKK okudum, onaylıyorum.</label>
-      <button type="submit">Formu Gönder</button>
-    </form>
-    <div id="success-popup" class="success-popup hidden">
-      <div class="popup-content"><h3>✅ Başvuru Alındı</h3><p>En kısa sürede sizinle iletişime geçeceğiz.</p></div>
+---
+
+## 📄 ticket.html
+
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Butterfly Calling – Ticket</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <a href="index.html" class="back-button">← Geri</a>
+
+  <section class="ticket-section">
+    <div class="form-container">
+      <h2>Bilet Kayıt Formu</h2>
+
+      <form id="ticket-form">
+        <label for="fullname">Ad Soyad *</label>
+        <input type="text" id="fullname" name="fullname" required>
+
+        <label for="phone">Telefon *</label>
+        <input type="tel" id="phone" name="phone" placeholder="05XXXXXXXXX" pattern="[0-9]{10,11}" required>
+
+        <label for="email">E-posta *</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="participation">Katılım Tipi *</label>
+        <select id="participation" name="participation" required>
+          <option value="" disabled selected>Seçiniz</option>
+          <option value="Daily Pass / 1.500₺">Daily Pass / 1.500₺</option>
+          <option value="After Pass / 2.000₺">After Pass / 2.000₺</option>
+          <option value="Standart Accommodation / 3.000₺">Standart Accommodation / 3.000₺</option>
+          <option value="VIP Accommodation / ?">VIP Accommodation / ?</option>
+        </select>
+
+        <label for="message">Ek Not veya Soru</label>
+        <textarea id="message" name="message"></textarea>
+
+        <label>
+          <input type="checkbox" name="kvkk" required>
+          KVKK metnini okudum, onaylıyorum.
+        </label>
+
+        <button type="submit">Formu Gönder</button>
+      </form>
+
+      <div id="success-popup" class="success-popup hidden">
+        <div class="popup-content">
+          <h3>✅ Başvuru Alındı</h3>
+          <p>En kısa sürede seninle iletişime geçeceğiz.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<script src="script.js"></script>
-</body></html>
+  <script src="script.js"></script>
+</body>
+</html>
