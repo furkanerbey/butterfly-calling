@@ -248,10 +248,6 @@ section {
   transform: scale(1.01);
 }
 
-  padding: 24px;
-  border-radius: 10px;
-  color: white;
-}
 
 .venue-text h2 {
   margin-bottom: 10px;
@@ -989,6 +985,17 @@ body#index .site-logo {
   background: url('assets/images/background.jpeg') center center / cover no-repeat;
   /* Dilerseniz opaklık veya renk filtresi ekleyebilirsiniz */
   /* opacity: 0.9; */
+}
+
+@media (max-width: 768px) {
+  .fixed-bg {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100%;
+    min-width: 100%;
+    background-attachment: scroll;
+  }
 }
 
 /* İçerik üstte kalsın diye */
