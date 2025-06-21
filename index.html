@@ -9,71 +9,96 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body id="index">
 
-  <!-- ========== HEADER ========== -->
-  <header class="site-header">
-    <div class="logo">BUTTERFLY CALLING</div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#venue">Venue</a></li>
-        <li><a href="#lineup">Line-up</a></li>
-        <li><a href="#activities">Activities</a></li>
-        <li><a href="#ticket">Ticket</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#social">Social</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- ========== HERO / BANNER ========== -->
-  <section id="hero" class="hero-section">
+  <a href="index.html" class="site-logo">
+  <img src="assets/images/logo.png" alt="Butterfly Calling Logo">
+</a>
+<!-- ========== ORTALANMIŞ LOGO ========== -->
+<div class="center-logo">
+  <img src="assets/images/logo.png" alt="Butterfly Calling Logo">
+</div>
+  <!-- ========== HERO ========== -->
+  <section class="hero-section">
     <div class="hero-content">
       <h1>SECRET JUNGLE</h1>
       <h2>MİNİ FESTİVAL</h2>
       <p>26–28 Temmuz 2025</p>
     </div>
   </section>
-
-  <!-- ========== VENUE ========== -->
-<section id="venue" class="venue-section">
-  <a href="venue.html" class="venue-box">
-    <img src="assets/images/venue.jpeg" alt="Festival Venue" class="venue-img" />
+  
+<!-- ========== VENUE KUTUSU ========== -->
+<section id="venue" class="venue-card">
+  <div class="venue-image" style="background-image: url('assets/images/venue.jpeg');">
     <div class="venue-text">
       <h2>VENUE</h2>
       <p>Konaklama & Festival Alanı</p>
+      <a href="venue.html" class="venue-button">Detayları Gör</a>
     </div>
-  </a>
+  </div>
 </section>
 
-  <!-- ========== LINE-UP ========== -->
-  <section id="lineup" class="lineup-section">
-    <h2>Line-up</h2>
-    <p>Performanslar burada listelenecek.</p>
-  </section>
 
-  <!-- ========== ACTIVITIES ========== -->
-  <section id="activities" class="activities-section">
-    <h2>Activities</h2>
-    <p>Festival süresince gerçekleşecek etkinlikler burada yer alacak.</p>
-  </section>
+  <!-- ========== LINE-UP KUTUSU ========== -->
+<section id="lineup-preview" class="venue-card">
+  <div class="venue-image" style="background-image: url('assets/images/artist-preview.jpeg');">
+    <div class="venue-text">
+      <h2>LINE-UP</h2>
+      <p>Festival boyunca sahne alacak DJ'ler ve sanatçılar</p>
+      <a href="lineup.html" class="venue-button">Sanatçılara Göz At</a>
+    </div>
+  </div>
+</section>
 
-  <!-- ========== TICKET ========== -->
-  <section id="ticket" class="ticket-section">
-    <h2>Ticket</h2>
-    <p>Bilgi ve kayıt formu yakında burada olacak.</p>
-  </section>
 
-  <!-- ========== ABOUT US ========== -->
-  <section id="about" class="about-section">
-    <h2>About Us</h2>
-    <p>Butterfly Calling hakkında detaylı bilgi burada yer alacak.</p>
-  </section>
+
+<!-- ========== ACTIVITIES KUTUSU ========== -->
+<section id="activities-preview" class="venue-card">
+  <div class="venue-image" style="background-image: url('assets/images/activities-preview.jpeg');">
+    <div class="venue-text">
+      <h2>ACTIVITIES</h2>
+      <p>Sanat, müzik, meditasyon ve yaratıcı atölyelerle içsel bir yolculuk</p>
+      <a href="activities.html" class="venue-button">Detayları Gör</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TICKET KUTUSU ========== -->
+<section id="ticket-preview" class="venue-card">
+  <div class="venue-image" style="background-image: url('assets/images/ticket-preview.jpeg');">
+    <div class="venue-text">
+      <h2>TICKET</h2>
+      <p>Festival katılımı için ön kayıt formunu doldur</p>
+      <a href="ticket.html" class="venue-button">Formu Aç</a>
+    </div>
+  </div>
+</section>
+<section id="about" class="about-section">
+  <div class="about-glass-box">
+    <h2>About Us – Butterfly Calling</h2>
+    <p>
+      Butterfly Calling was born from a vision of blending electronic music with a spiritual experience rooted in nature — a space where music is not only heard but deeply felt.
+    </p>
+    <p>
+      Inspired by nature, butterflies, and collective consciousness, each of our gatherings is more than just a festival. It is a space of transformation, self-exploration, and a call from heart to heart.
+    </p>
+    <p>
+      Our goal is to place music at the center of our connection, while creating authentic bonds among participants and offering a timeless experience.
+    </p>
+    <p>
+      Butterfly Calling is not just an event brand — it’s a community. A place where we dance, share, and grow together.
+    </p>
+    <p>
+      We invite everyone who resonates with this spirit to join us on the journey.
+    </p>
+  </div>
+</section>
 
   <!-- ========== SOCIAL MEDIA ========== -->
-  <section id="social" class="social-section">
+  <section id="social">
     <h2>Social Media</h2>
-    <p>Sosyal medya bağlantıları ve iletişim bilgileri burada olacak.</p>
+    <p>Bizi Instagram'da takip edin: <a href="https://instagram.com/butterfly.calling" target="_blank">@butterfly.calling</a></p>
   </section>
 
   <!-- ========== FOOTER ========== -->
@@ -81,6 +106,5 @@
     <p>&copy; 2025 Butterfly Calling. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
 </body>
-</html>
+
