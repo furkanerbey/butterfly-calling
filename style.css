@@ -979,3 +979,21 @@ body#index .site-logo {
   text-decoration: none;
   color: white;
 }
+/* Sabit arka plan */
+.fixed-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: url('assets/images/arkaplan.jpg') center center / cover no-repeat;
+  /* Dilerseniz opaklık veya renk filtresi ekleyebilirsiniz */
+  /* opacity: 0.9; */
+}
+
+/* İçerik üstte kalsın diye */
+body {
+  position: relative;
+  z-index: 1;
+  background: transparent !important;
+}
