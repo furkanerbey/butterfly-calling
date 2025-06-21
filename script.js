@@ -9,7 +9,7 @@ document.getElementById('ticket-form').addEventListener('submit', function(e) {
     message: document.getElementById('message').value
   };
 
-  fetch('https://script.google.com/macros/s/AKfycbzCOC_zaaVWh5H74GmUn38tCF_HZ2gCkvhwqWAaIn73owvhtREz-ba3jZ5xClMNzx7QBw/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbxpSj37qEktp2--5ediJ7fW78T3aJIqO40xY1QqFJcMJ39bqOaAfILtqy0XSNMMnnVK/exec', {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
@@ -18,9 +18,18 @@ document.getElementById('ticket-form').addEventListener('submit', function(e) {
   })
   .then(response => response.json())
   .then(result => {
-    document.getElementById('success-popup').classList.remove('hidden');
+    if (result.result === "success") {
+      document.getElementById('success-popup').classList.remove('hidden');
+      setTimeout(() => {
+        document.getElementById('success-popup').classList.add('hidden');
+        document.getElementById('ticket-form').reset();
+      }, 3000);
+    } else {
+      alert("Gönderim başarısız oldu.");
+    }
   })
   .catch(error => {
-    alert('Hata oluştu, lütfen tekrar deneyin.');
+    alert("Bir hata oluştu. Lütfen tekrar deneyin.");
+    console.error("Form gönderim hatası:", error);
   });
 });
