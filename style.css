@@ -248,8 +248,6 @@ section {
   transform: scale(1.01);
 }
 
-.venue-text {
-  background: rgba(0, 0, 0, 0.5);
   padding: 24px;
   border-radius: 10px;
   color: white;
@@ -746,4 +744,238 @@ body#index .site-logo {
   .form-container {
     padding: 20px;
   }
+}
+.accommodation-types {
+  padding: 80px 20px 40px;
+  text-align: center;
+}
+
+.accommodation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+
+.accommodation-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 0.3s ease;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.accommodation-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+.accommodation-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.accommodation-info {
+  padding: 20px;
+}
+
+.accommodation-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-grid img.expanded {
+  aspect-ratio: 19 / 9;
+  transform: scale(1.05);
+  z-index: 2;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+.artist-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.artist-card.expanded {
+  transform: scale(1.03);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+}
+
+.artist-info {
+  padding: 20px;
+  color: white;
+  position: relative;
+}
+
+.artist-bio {
+  margin-top: 10px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.artist-card.expanded .artist-bio {
+  opacity: 1;
+  max-height: 300px;
+}
+.artist-card:hover img {
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    transform: translate(2px, -2px);
+    filter: hue-rotate(20deg);
+  }
+  40% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(-20deg);
+  }
+  60% {
+    transform: translate(1px, -1px);
+    filter: hue-rotate(10deg);
+  }
+  80% {
+    transform: translate(-1px, 1px);
+    filter: hue-rotate(-10deg);
+  }
+  100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+}
+.success-popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.success-popup.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.popup-content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+}
+.venue-card {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.venue-card-box {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.venue-card-box:hover {
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.venue-card-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.venue-card-box p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+.venue-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.85rem;
+  backdrop-filter: blur(3px);
+  background: rgba(255, 255, 255, 0.1);
+  transition: 0.3s ease;
+}
+
+.venue-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+@media (max-width: 768px) {
+  .venue-card-box {
+    padding: 30px 20px;
+  }
+
+  .venue-card-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .venue-card-box p {
+    font-size: 0.85rem;
+  }
+}
+.venue-card-box {
+  text-decoration: none;
+  color: white;
+}
+
+.venue-card-box:visited,
+.venue-card-box:hover,
+.venue-card-box:active {
+  text-decoration: none;
+  color: white;
 }

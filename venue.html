@@ -16,16 +16,70 @@
 <a href="index.html" class="site-logo">
   <img src="assets/images/logo.png" alt="Butterfly Calling Logo">
 </a>
-  <!-- ===== GALERİ ===== -->
-  <section class="venue-gallery">
-    <div class="gallery-grid">
-      <img src="assets/images/venue1.jpeg" alt="Venue 1" />
-      <img src="assets/images/venue2.jpeg" alt="Venue 2" />
-      <img src="assets/images/venue3.jpeg" alt="Venue 3" />
-      <img src="assets/images/venue4.jpeg" alt="Venue 4" />
-    </div>
-  </section>
 
+<section class="accommodation-types">
+
+  <h2 class="section-title">KONAKLAMA TİPLERİ</h2>
+  <div class="accommodation-grid">
+<a href="villa-begonvil.html" class="accommodation-card">
+  <img src="assets/images/accommodations/begonvil1.jpg" alt="Villa Begonvil">
+  <div class="accommodation-info">
+    <h3>VİLLA BEGONVİL (3+1)</h3>
+  </div>
+</a>
+
+    <a href="villa-defne.html" class="accommodation-card">
+      <img src="assets/images/accommodations/defne1.jpg" alt="Villa Defne">
+      <div class="accommodation-info">
+        <h3>VİLLA DEFNE (3+1)</h3>
+      </div>
+    </a>
+
+    <a href="villa-ates.html" class="accommodation-card">
+      <img src="assets/images/accommodations/ates1.jpg" alt="Villa Ateş">
+      <div class="accommodation-info">
+        <h3>VİLLA ATEŞ (3+1)</h3>
+      </div>
+    </a>
+
+    <a href="villa-lupin.html" class="accommodation-card">
+      <img src="assets/images/accommodations/lupin1.jpg" alt="Villa Lupin">
+      <div class="accommodation-info">
+        <h3>VİLLA LUPIN (2+1)</h3>
+      </div>
+    </a>
+
+    <a href="villa-lotus.html" class="accommodation-card">
+      <img src="assets/images/accommodations/lotus1.jpg" alt="Villa Lotus">
+      <div class="accommodation-info">
+        <h3>VİLLA LOTUS (2+1)</h3>
+      </div>
+    </a>
+
+    <a href="room-standart.html" class="accommodation-card">
+      <img src="assets/images/accommodations/room1.jpg" alt="Standart Room">
+      <div class="accommodation-info">
+        <h3>STANDART ROOM</h3>
+      </div>
+    </a>
+
+  </div>
+</section>
+  <!-- ===== GALERİ ===== -->
+<section class="venue-gallery">
+  <h2>ETKİNLİK ALANI</h2>
+  <div class="gallery-grid">
+    <img src="assets/images/venue1.jpeg" alt="Venue 1">
+    <img src="assets/images/venue2.jpeg" alt="Venue 2">
+    <img src="assets/images/venue3.jpeg" alt="Venue 3">
+    <img src="assets/images/venue4.jpeg" alt="Venue 4">
+
+    <!-- Yeni görselleri buraya ekle -->
+    <img src="assets/images/venue5.jpeg" alt="Venue 5">
+    <img src="assets/images/venue6.jpeg" alt="Venue 6">
+    <img src="assets/images/venue7.jpeg" alt="Venue 7">
+  </div>
+</section>
   <!-- ===== HARİTA ===== -->
   <section class="venue-map">
     <h2>LOCATION</h2>
@@ -76,3 +130,10 @@
   &#8592;
 </button>
 </html>
+<script>
+  document.querySelectorAll('.gallery-grid img').forEach(img => {
+    img.addEventListener('click', () => {
+      img.classList.toggle('expanded');
+    });
+  });
+</script>

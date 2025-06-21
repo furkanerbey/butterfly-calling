@@ -17,28 +17,37 @@
   &#8592;
 </button>
 
-  <h1 class="page-title">LINE-UP</h1>
+<section class="artist-grid">
 
-  <section class="artist-grid">
-    <div class="artist-card">
-      <img src="assets/images/artists/artist1.jpeg" alt="Artist 1">
-      <div class="artist-info">
-        <h3>DJ Cosmos</h3>
-        <p>Uzay temalı techno setleriyle tanınan DJ Cosmos, elektronik müziğe ruh katıyor.</p>
+  <div class="artist-card">
+    <img src="assets/images/artists/artist1.jpeg" alt="Artist 1">
+    <div class="artist-info">
+      <h3>DJ Cosmos</h3>
+      <p>ABOUT</p>
+      <div class="artist-bio">
+        <p>DJ Cosmos, galaksi temalı müzik seçimleri ve analog sentezleriyle dinleyiciyi evrende bir yolculuğa çıkarıyor.</p>
       </div>
     </div>
+  </div>
 
-    <div class="artist-card">
-      <img src="assets/images/artists/artist2.jpeg" alt="Artist 2">
-      <div class="artist-info">
-        <h3>Moon Waver</h3>
-        <p>Ambient ve synth dalgalarıyla zihinsel yolculuklar sunar.</p>
+  <div class="artist-card">
+    <img src="assets/images/artists/artist2.jpeg" alt="Artist 2">
+    <div class="artist-info">
+      <h3>Moon Waver</h3>
+      <p>ABOUT</p>
+      <div class="artist-bio">
+        <p>Ambient ve synth dalgalarıyla zihinsel yolculuklar sunar</p>
       </div>
     </div>
+  </div>
 
-    <!-- Yeni sanatçı kartları buraya eklenebilir -->
-
-  </section>
-
+</section>
 </body>
 </html>
+<script>
+  document.querySelectorAll('.artist-card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('expanded');
+    });
+  });
+</script>

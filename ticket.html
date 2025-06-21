@@ -1,8 +1,21 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Butterfly Calling – Ticket</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<a href="index.html" class="back-button">← Geri</a>
+
 <section class="ticket-section">
   <div class="form-container">
     <h2>Bilet Kayıt Formu</h2>
     <form action="#" method="POST">
-      
+
       <!-- AD SOYAD -->
       <label for="fullname">Ad Soyad *</label>
       <input type="text" id="fullname" name="fullname" placeholder="Adınız ve Soyadınız" required>
@@ -15,23 +28,21 @@
       <label for="email">E-posta Adresi *</label>
       <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
 
- <!-- KATILIM GÜNÜ DROPDOWN (BURAYA GİRECEK) -->
-  <label for="participation">Katılmak İstediğiniz Gün *</label>
-  <select id="participation" name="participation" class="custom-select" required>
-    <option value="" disabled selected>Gün seçiniz</option>
-    <option value="26 Temmuz">26 Temmuz</option>
-    <option value="27 Temmuz">27 Temmuz</option>
-    <option value="28 Temmuz">28 Temmuz</option>
-    <option value="Tüm Günler">Tüm Günler</option>
-  </select>
-
-    
+      <!-- KATILIM TİPİ -->
+      <label for="participation">Katılım Tipi *</label>
+      <select id="participation" name="participation" class="custom-select" required>
+        <option value="" disabled selected>Seçiniz</option>
+        <option value="Daily Pass / 1.500₺">Daily Pass / 1.500₺</option>
+        <option value="After Pass / 2.000₺">After Pass / 2.000₺</option>
+        <option value="Standart Accommodation / 3.000₺">Standart Accommodation / 3.000₺</option>
+        <option value="VIP Accommodation / ?">VIP Accommodation / ?</option>
+      </select>
 
       <!-- MESAJ -->
-      <label for="message">Eklemek İstediğiniz Not</label>
-      <textarea id="message" name="message" placeholder="Ulaşım, kamp alanı, arkadaş grubu vs. notlarınızı yazabilirsiniz."></textarea>
+      <label for="message">Eklemek İstediğiniz Not veya Soru için</label>
+      <textarea id="message" name="message" placeholder="Type here.."></textarea>
 
-      <!-- KVKK ONAYI -->
+      <!-- KVKK -->
       <label class="checkbox-inline">
         <input type="checkbox" name="kvkk" required>
         KVKK metnini okudum, onaylıyorum.
@@ -39,8 +50,33 @@
 
       <!-- GÖNDER -->
       <button type="submit">Formu Gönder</button>
-
     </form>
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- ✅ BAŞARI POPUP -->
+    <div id="success-popup" class="success-popup hidden">
+      <div class="popup-content">
+        <h3>✅ Başvuru Alındı</h3>
+        <p>En kısa sürede seninle iletişime geçeceğiz.</p>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- ✅ JS: Popup Gösterimi -->
+<script>
+  const form = document.querySelector("form");
+  const popup = document.getElementById("success-popup");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Test için durdurduk
+    popup.classList.remove("hidden");
+
+    setTimeout(() => {
+      popup.classList.add("hidden");
+      form.reset(); // form temizleniyor
+    }, 3000);
+  });
+</script>
+
+</body>
+</html>
