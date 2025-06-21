@@ -657,6 +657,21 @@ body#index .site-logo {
 }
 
 @media (max-width: 768px) {
+  .back-button {
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .form-container input,
+  .form-container button {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 768px) {
   section {
     padding: 60px 16px;
   }
