@@ -13,77 +13,49 @@
 
   <a href="index.html" class="back-button">← Geri</a>
 
-  <main role="main">
-    <article>
-      <header>
-        <h1>Bilet Kayıt Formu</h1>
-      </header>
-      <section aria-label="Content">
-        <div class="form-container">
-          <h2>Bilet Kayıt Formu</h2>
+  <main>
+    <section class="ticket-section">
+      <div class="form-container">
+        <h2>Bilet Kayıt Formu</h2>
 
-          <!-- ✅ Formsubmit.co entegrasyonu -->
-          <form method="POST" action="/api/submit">
-            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-            <label for="fullname">Ad Soyad *</label>
-            <input type="text" id="fullname" name="Ad Soyad" required>
+        <form action="https://formsubmit.co/furkanerbey@hotmail.com" method="POST">
+          <!-- ✏️ Buraya kendi e-posta adresini yaz: YOUR_EMAIL_HERE -->
 
-            <label for="phone">Telefon *</label>
-            <input type="tel" id="phone" name="Telefon" placeholder="05XXXXXXXXX" pattern="[0-9]{10,11}" required>
+          <label for="fullname">Ad Soyad *</label>
+          <input type="text" id="fullname" name="Ad Soyad" required>
 
-            <label for="email">E-posta *</label>
-            <input type="email" id="email" name="Eposta" required>
+          <label for="phone">Telefon *</label>
+          <input type="tel" id="phone" name="Telefon" placeholder="05XXXXXXXXX" pattern="05[0-9]{9}" required>
 
-            <label for="participation">Katılım Tipi *</label>
-            <select id="participation" name="Katılım Tipi" required>
-              <option value="" disabled selected>Seçiniz</option>
-              <option>Daily Entry / 1.500₺</option>
-              <option>All Day All Night / 2.000₺</option>
-              <option>Standart Accommodation / 6.000₺</option>
-              <option>Vip Villa Options </option>
-            </select>
+          <label for="email">E-posta *</label>
+          <input type="email" id="email" name="Eposta" required>
 
-            <label for="message">Notunuz</label>
-            <textarea id="message" name="Mesaj"></textarea>
+          <label for="participation">Katılım Tipi *</label>
+          <select id="participation" name="Katılım Tipi" required>
+            <option value="" disabled selected>Seçiniz</option>
+            <option>Daily Entry / 1.500₺</option>
+            <option>All Day All Night / 2.000₺</option>
+            <option>Standart Accommodation / 6.000₺</option>
+            <option>Vip Villa Options</option>
+          </select>
 
-            <!-- Gizli ayarlar -->
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="Yeni Butterfly Calling Formu!">
-            <input type="hidden" name="_template" value="box">
+          <label for="message">Notunuz</label>
+          <textarea id="message" name="Mesaj" placeholder="Eklemek istediğiniz not varsa..."></textarea>
 
-            <!-- KVKK -->
-            <label>
-              <input type="checkbox" required>
-              KVKK metnini okudum, onaylıyorum.
-            </label>
+          <!-- KVKK -->
+          <label><input type="checkbox" required> KVKK metnini okudum, onaylıyorum.</label>
 
-            <button type="submit">Formu Gönder</button>
-          </form>
+          <!-- 🔒 Gizli Formsubmit Ayarları -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="Butterfly Calling Bilet Başvurusu">
+          <input type="hidden" name="_template" value="box">
+          <input type="hidden" name="_next" value="https://butterflycallingtr.com/tesekkurler.html">
 
-        </div>
-      </section>
-    </article>
+          <button type="submit">Formu Gönder</button>
+        </form>
+      </div>
+    </section>
   </main>
-
-  <script>
-    // Form validation
-    const validateForm = (data) => {
-      const errors = {};
-      if (!data.phone.match(/^05[0-9]{9}$/)) {
-        errors.phone = 'Geçerli bir telefon numarası giriniz';
-      }
-      return errors;
-    };
-
-    // Environment variables
-    const API_URL = process.env.API_URL || 'default_url';
-  </script>
-
-  <!-- Resimlerde lazy loading -->
-  <img src="image.jpg" loading="lazy" alt="Description">
-
-  <!-- CSS minify -->
-  <link rel="stylesheet" href="style.min.css">
 
 </body>
 </html>
