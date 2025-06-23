@@ -5,57 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Butterfly Calling – Ticket</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
-  <meta name="description" content="Butterfly Calling - Secret Jungle Mini Fest">
-  <link rel="preload" href="assets/fonts/unbounded.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
 
-  <a href="index.html" class="back-button">← Geri</a>
+<a href="index.html" class="back-button">← Geri</a>
 
-  <main>
-    <section class="ticket-section">
-      <div class="form-container">
-        <h2>Bilet Kayıt Formu</h2>
+<section class="ticket-section">
+  <div class="form-container">
+    <h2>Bilet Kayıt Formu</h2>
 
-        <form action="https://formsubmit.co/butterfly.callings@gmail.com" method="POST">
-          <!-- ✏️ Buraya kendi e-posta adresini yaz: YOUR_EMAIL_HERE -->
+    <!-- 🔻 BURADAKİ URL'yi formcarry panelinden aldığın endpoint ile değiştir -->
+    <form action="https://formcarry.com/s/ajEG_2ebGcK" method="POST" accept-charset="UTF-8">
 
-          <label for="fullname">Ad Soyad *</label>
-          <input type="text" id="fullname" name="Ad Soyad" required>
+      <!-- Ad Soyad -->
+      <label for="fullname">Ad Soyad *</label>
+      <input type="text" id="fullname" name="Ad Soyad" required>
 
-          <label for="phone">Telefon *</label>
-          <input type="tel" id="phone" name="Telefon" placeholder="05XXXXXXXXX" pattern="05[0-9]{9}" required>
+      <!-- Telefon -->
+      <label for="phone">Telefon *</label>
+      <input type="tel" id="phone" name="Telefon" placeholder="05XXXXXXXXX" required>
 
-          <label for="email">E-posta *</label>
-          <input type="email" id="email" name="Eposta" required>
+      <!-- E-Posta -->
+      <label for="email">E-Posta *</label>
+      <input type="email" id="email" name="Eposta" required>
 
-          <label for="participation">Katılım Tipi *</label>
-          <select id="participation" name="Katılım Tipi" required>
-            <option value="" disabled selected>Seçiniz</option>
-            <option>Daily Entry / 1.500₺</option>
-            <option>All Day All Night / 2.000₺</option>
-            <option>Standart Accommodation / 6.000₺</option>
-            <option>Vip Villa Options</option>
-          </select>
+      <!-- Katılım Tipi -->
+      <label for="participation">Katılım Tipi *</label>
+      <select id="participation" name="Katılım Tipi" required>
+        <option value="" disabled selected>Seçiniz</option>
+        <option value="Daily Entry / 1.500₺">Daily Entry / 1.500₺</option>
+        <option value="All Day All Night / 2.000₺">All Day All Night / 2.000₺</option>
+        <option value="Standart Accommodation / 6.000₺">Standart Accommodation / 6.000₺</option>
+        <option value="Vip Villa Options">Vip Villa Options</option>
+      </select>
 
-          <label for="message">Notunuz</label>
-          <textarea id="message" name="Mesaj" placeholder="Eklemek istediğiniz not varsa..."></textarea>
+      <!-- Mesaj -->
+      <label for="message">Ek Not veya Soru</label>
+      <textarea id="message" name="Mesaj"></textarea>
 
-          <!-- KVKK -->
-          <label><input type="checkbox" required> KVKK metnini okudum, onaylıyorum.</label>
+      <!-- KVKK -->
+      <label>
+        <input type="checkbox" name="KVKK" required>
+        KVKK metnini okudum, onaylıyorum.
+      </label>
 
-          <!-- 🔒 Gizli Formsubmit Ayarları -->
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_subject" value="Butterfly Calling Bilet Başvurusu">
-          <input type="hidden" name="_template" value="box">
-          <input type="hidden" name="_next" value="https://butterflycallingtr.com/tesekkurler.html">
-
-          <button type="submit">Formu Gönder</button>
-        </form>
-      </div>
-    </section>
-  </main>
+      <button type="submit">Formu Gönder</button>
+    </form>
+  </div>
+</section>
 
 </body>
 </html>
